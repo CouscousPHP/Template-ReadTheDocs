@@ -28,6 +28,9 @@
                         <li class="toctree-l1 {{ activeMenu ? 'current' }}">
                             <a class="reference internal {{ activeMenu ? 'current' }}"
                                href="{{ item.absoluteUrl|default(baseUrl ~ '/' ~ item.relativeUrl) }}">
+                                {% if not activeMenu and item.items is defined %}
+                                    <span class="toctree-expand"></span>
+                                {% endif %}
                                 {{ item.text|raw }}
                             </a>
 
