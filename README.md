@@ -47,6 +47,16 @@ menu:
             text: Another link
             # Or absolute urls
             absoluteUrl: https://example.com
+        group:
+            text: Link with a sub menu
+            relativeUrl: group.html
+            items:
+                anchor:
+                    text: Some anchor
+                    relativeUrl: group.html#some-anchor
+                link:
+                    text: Some link
+                    absoluteUrl: https://example.com
 ```
 
 Note that the menu items can also contain HTML:
@@ -69,6 +79,8 @@ currentMenu: home
 
 # Welcome
 ```
+
+When using sub menus you can also specify the `currentSubMenu` key.
 
 ## TODO
 
