@@ -1,5 +1,6 @@
 ---
 currentMenu: home
+currentSubMenu: configuration
 ---
 
 # Read The Docs template for Couscous

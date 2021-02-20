@@ -33,9 +33,10 @@
 
                             {% if activeMenu and item.items is defined %}
                                 <ul>
-                                    {% for subItem in item.items %}
-                                        <li class="toctree-l2">
-                                            <a class="reference internal" href="{{ subItem.absoluteUrl|default(baseUrl ~ '/' ~ subItem.relativeUrl) }}">
+                                    {% for subItemId,subItem in item.items %}
+                                        {% set activeSubMenu = (subItemId == currentSubMenu) %}
+                                        <li class="toctree-l2 {{ activeSubMenu ? 'current' }}">
+                                            <a class="reference internal {{ activeSubMenu ? 'current' }}" href="{{ subItem.absoluteUrl|default(baseUrl ~ '/' ~ subItem.relativeUrl) }}">
                                                 {{ subItem.text|raw }}
                                             </a>
                                         </li>
