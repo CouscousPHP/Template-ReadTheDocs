@@ -15,6 +15,13 @@ menu:
             text: Home page
             # You can use relative urls
             relativeUrl:
+            items:
+                usage:
+                    text: Usage
+                    relativeUrl: '#'
+                configuration:
+                    text: Configuration
+                    relativeUrl: '#'
         getting-started:
             text: Getting Started
             relativeUrl:

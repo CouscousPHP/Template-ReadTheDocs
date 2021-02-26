@@ -24,11 +24,28 @@
             <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
                 <ul>
                     {% for itemId, item in menu.items %}
-                        <li class="toctree-l1 {{ itemId == currentMenu ? 'current' }}">
-                            <a class="reference internal {{ itemId == currentMenu ? 'current' }}"
+                        {% set activeMenu = (itemId == currentMenu) %}
+                        <li class="toctree-l1 {{ activeMenu ? 'current' }}">
+                            <a class="reference internal {{ activeMenu ? 'current' }}"
                                href="{{ item.absoluteUrl|default(baseUrl ~ '/' ~ item.relativeUrl) }}">
+                                {% if not activeMenu and item.items is defined %}
+                                    <span class="toctree-expand"></span>
+                                {% endif %}
                                 {{ item.text|raw }}
                             </a>
+
+                            {% if activeMenu and item.items is defined %}
+                                <ul>
+                                    {% for subItemId,subItem in item.items %}
+                                        {% set activeSubMenu = (subItemId == currentSubMenu) %}
+                                        <li class="toctree-l2 {{ activeSubMenu ? 'current' }}">
+                                            <a class="reference internal {{ activeSubMenu ? 'current' }}" href="{{ subItem.absoluteUrl|default(baseUrl ~ '/' ~ subItem.relativeUrl) }}">
+                                                {{ subItem.text|raw }}
+                                            </a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
                         </li>
                     {% endfor %}
                 </ul>

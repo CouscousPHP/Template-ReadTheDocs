@@ -2,7 +2,63 @@
     margin-bottom: 0;
 }
 
-.wy-nav-side { overflow: inherit; } 
+.wy-nav-side { overflow: inherit; }
+
+/* Sub menu elements */
+.wy-menu-vertical li.on a span.toctree-expand, .wy-menu-vertical li.current > a span.toctree-expand {
+    display: block;
+    font-size: .8em;
+    line-height: 1.6em;
+    color:#333
+}
+
+a .wy-menu-vertical li span.toctree-expand, .wy-menu-vertical li a span.toctree-expand, .wy-menu-vertical li.on a span.toctree-expand, .wy-menu-vertical li.current > a span.toctree-expand {
+    display: inline-block;
+    text-decoration:inherit
+}
+
+.wy-menu-vertical li span.toctree-expand, .wy-menu-vertical li.on a span.toctree-expand, .wy-menu-vertical li.current > a span.toctree-expand {
+    font-family:inherit
+}
+
+.wy-menu-vertical li span.toctree-expand, .wy-menu-vertical li.on a span.toctree-expand, .wy-menu-vertical li.current > a span.toctree-expand {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing:grayscale
+}
+
+.wy-menu-vertical li span.toctree-expand {
+    display: block;
+    float: left;
+    margin-left: -1.2em;
+    font-size: .8em;
+    line-height: 1.6em;
+    color:#4d4d4d
+}
+
+.wy-menu-vertical li.on a span.toctree-expand:before, .wy-menu-vertical li.current > a span.toctree-expand:before {
+    content: ""
+}
+
+.wy-menu-vertical li span.toctree-expand:before, .wy-menu-vertical li.on a span.toctree-expand:before, .wy-menu-vertical li.current > a span.toctree-expand:before {
+    font-family: "FontAwesome";
+    display: inline-block;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    text-decoration:inherit
+}
+
+.wy-menu-vertical li span.toctree-expand:before, .wy-menu-vertical li.on a span.toctree-expand:before, .wy-menu-vertical li.current > a span.toctree-expand:before {
+    -webkit-font-smoothing:antialiased
+}
+
+.wy-menu-vertical li span.toctree-expand:before {
+    content: ""
+}
 
 /* Code blocks */
 pre > code {
